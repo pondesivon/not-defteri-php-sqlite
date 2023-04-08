@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr-TR">
 <head>
-	<meta charset="UTF-8">
-	<title>PHP SQLite Not Defteri</title>
-	<link rel="stylesheet" href="./css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>PHP SQLite Not Defteri</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
- <!-- Navbar---->
+ <!-- Navbar Başlangıç -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">PHP SQLite Not Defteri</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,4 @@
     </form>
   </div>
 </nav>
-
-
-
-<!--- Navbar END--->
+<!-- Navbar Bitiş -->

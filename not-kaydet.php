@@ -1,17 +1,36 @@
 <?php
-header('Refresh:1;url=not-listele.php');
-//Include Database
-require_once('./db-config.php');
+   //--------------------------------------------------
+   //Gerekli dosyaları çağır.
+   //--------------------------------------------------
+   require_once('./db-config.php');
 
-$baslik = SQLite3::escapeString($_POST['baslik']);
-$icerik = $safe = SQLite3::escapeString($_POST['icerik']);
-$etiketler = SQLite3::escapeString($_POST['etiketler']);
+   //--------------------------------------------------
+   //Bilgileri değişkenlere aktar.
+   //--------------------------------------------------
+   $baslik = SQLite3::escapeString($_POST['baslik']);
+   $icerik = $safe = SQLite3::escapeString($_POST['icerik']);
+   $etiketler = SQLite3::escapeString($_POST['etiketler']);
 
- $sql ="INSERT INTO notlar(baslik, icerik, etiketler) VALUES('$baslik', '$icerik', '$etiketler')";
+   //--------------------------------------------------
+   //Sorgu metni oluştur.
+   //--------------------------------------------------
+   $sql ="INSERT INTO notlar(baslik, icerik, etiketler) VALUES('$baslik', '$icerik', '$etiketler')";
 
-   $ret = $db->exec($sql);
-   if(!$ret) {
+   //--------------------------------------------------
+   //Sorgu çalıştır.
+   //--------------------------------------------------
+   $sonuc = $db->exec($sql);
+
+   //--------------------------------------------------
+   //Sorgu sonucuna göre işlem yap.
+   //--------------------------------------------------
+   if(!$sonuc) {
       echo $db->lastErrorMsg();
    } else {
       echo "Not başarılı bir şekilde kaydedildi.";
    }
+
+   //--------------------------------------------------
+   //Yönlendirme yap.
+   //--------------------------------------------------
+   header('Refresh:1;url=not-listele.php');

@@ -1,9 +1,12 @@
+<!-- Gerekli dosyaları çağır. -->
 <?php
-   require_once('db-config.php');
-   require_once('navbar.php');
-   ?>
+	require_once('db-config.php');
+	require_once('navbar.php');
+?>
+
 <div class="container">
 	<h3 class="page-title">Hakkında</h3>
+	
 	<p><strong>Kaynak</strong></p>
 	<p>Şu bağlantıdaki kaynağın proje amacına göre yeniden düzenlenmiş halidir: <a href="https://www.youtube.com/watch?v=-frCfUepNiA" target="_blank">Database CRUD PHP Desktop application with SQLite</a></p>
 	<p>Projenin asıl versiyonuna ait kaynak kodu bu adrestedir: <a href="https://drive.google.com/file/d/1Gl9SnsJlbP33RDkGzu4N5oDEB5FYC25W" target="_blank">https://drive.google.com/file/d/1Gl9SnsJlbP33RDkGzu4N5oDEB5FYC25W</a></p>
@@ -28,5 +31,6 @@
 	<p><strong>Sorumluluk Reddi</strong></p>
 	<p>Bu script örnek olması amacıyla hazırlanmıştır ve script kullanımı ile ilgili herhangi bir sorumluluk kabul edilmemektedir.</p>
 </div>
-</body>
-</html>
+
+<!-- Footer alanını getir. -->
+<?php require_once('footer.php'); ?>

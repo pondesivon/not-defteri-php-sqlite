@@ -1,22 +1,34 @@
 <?php
-header('Refresh:1;url=not-listele.php');
-//Database
-require_once('db-config.php');
+   //--------------------------------------------------
+   //Gerekli dosyaları çağır.
+   //--------------------------------------------------
+   require_once('db-config.php');
 
-//DElete Student
+   //--------------------------------------------------
+   //Not id değerini al.
+   //--------------------------------------------------
+   $id = $_GET['id'];
 
+   //--------------------------------------------------
+   //Sorgu metni oluştur.
+   //--------------------------------------------------
+   $sql ="DELETE FROM notlar WHERE id=$id ";
 
-//Include Database
-require_once('./db-config.php');
+   //--------------------------------------------------
+   //Sorgu çalıştır.
+   //--------------------------------------------------
+   $sonuc = $db->exec($sql);
 
-
-$id = $_GET['id'];
-
-
-$sql ="DELETE FROM notlar WHERE id=$id ";
-   $ret = $db->exec($sql);
-   if(!$ret) {
+   //--------------------------------------------------
+   //Sorgu sonucuna göre işlem yap.
+   //--------------------------------------------------
+   if(!$sonuc) {
       echo $db->lastErrorMsg();
    } else {
-      echo $db->changes(), "<span class='alert alert-success'>Not başarılı bir şekilde silindi.</span>";
+      echo"Not başarılı bir şekilde silindi." . " [" . $db->changes() . "]";
    }
+
+   //--------------------------------------------------
+   //Yönlendirme yap.
+   //--------------------------------------------------
+   header('Refresh:1;url=not-listele.php');

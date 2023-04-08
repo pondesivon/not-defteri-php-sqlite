@@ -1,24 +1,34 @@
 <?php
-header('Refresh:3;url=not-listele.php');
-//Database
-require_once('db-config.php');
+   //--------------------------------------------------
+   //Veri tabanını çağır.
+   //--------------------------------------------------
+   require_once('db-config.php');
 
-//Update Student
-
-
-//Include Database
-require_once('./db-config.php');
-
-$baslik = $_POST['baslik'] ;
-$icerik = $_POST['icerik'];
-$etiketler = $_POST['etiketler'];
-$id = $_POST['id'];
+   //--------------------------------------------------
+   //Bilgileri değişkene aktar.
+   //--------------------------------------------------
+   $baslik = SQLite3::escapeString($_POST['baslik']);
+   $icerik = $safe = SQLite3::escapeString($_POST['icerik']);
+   $etiketler = SQLite3::escapeString($_POST['etiketler']);
+   $id = $_POST['id'];
 
 
-$sql ="UPDATE notlar SET baslik='$baslik', icerik='$icerik', etiketler='$etiketler' WHERE id='$id'";
-$ret = $db->exec($sql);
-if(!$ret) {
-   echo $db->lastErrorMsg();
-} else {
-   echo $db->changes(), "Not başarılı bir şekilde güncellendi.";
-}
+   //--------------------------------------------------
+   //Güncelleme sorgusu çalıştır.
+   //--------------------------------------------------
+   $sql ="UPDATE notlar SET baslik='$baslik', icerik='$icerik', etiketler='$etiketler' WHERE id='$id'";
+   $sonuc = $db->exec($sql);
+
+   //--------------------------------------------------
+   //Sorgu sonucuna göre bilgilendir.
+   //--------------------------------------------------
+   if(!$sonuc) {
+      echo $db->lastErrorMsg();
+   } else {
+      echo "Not başarılı bir şekilde güncellendi." . " [" . $db->changes() . "]";
+   }
+
+   //--------------------------------------------------
+   //Not okuma sayfasına yönlendir.
+   //--------------------------------------------------
+   header('Refresh:1;url=not-oku.php?id=' . $id);
