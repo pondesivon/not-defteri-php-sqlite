@@ -11,4 +11,4 @@ PHP ile temel veri tabanı işlemlerinin gerçekleştirilmesiyle ilgili olarak �
 - emmet.js
 
 ## Kaynak
-Bu içerik aşağıdaki kaynaktan baz alınarak geliştirilmiştir: [https://github.com/developersharif/sqlite3_crud_php](https://github.com/developersharif/sqlite3_crud_php)
+Bu içerik aşağıdaki kaynaktan baz alınarak geliştirilmiştir: [https://www.youtube.com/watch?v=-frCfUepNiA](Database CRUD PHP Desktop application with SQLite)
