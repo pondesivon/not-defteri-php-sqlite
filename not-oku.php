@@ -22,8 +22,9 @@
    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
    <div class="form-group">
       <?php echo nl2br($row['icerik']); ?>
-      <br><br>
-      <?php echo $row['etiketler']; ?>
+      
+      <p>Etiketler</p><hr>
+      <p><?php echo $row['etiketler']; ?></p>
    </div>
 
 </form>
