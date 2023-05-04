@@ -1,4 +1,4 @@
-# PHP SQLite Not Defteri
+# Not Defteri PHP SQLite
 
 ## Amaç
 PHP ile temel veri tabanı işlemlerinin gerçekleştirilmesiyle ilgili olarak örnek olması amacıyla hazırlanmıştır.
