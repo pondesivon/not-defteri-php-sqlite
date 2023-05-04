@@ -1,9 +1,9 @@
-# Not Defteri PHP SQLite
+#not-defteri-php-sqlite
 
-## Amaç
+## Not Defteri - PHP SQLite
 PHP ile temel veri tabanı işlemlerinin gerçekleştirilmesiyle ilgili olarak örnek olması amacıyla hazırlanmıştır.
 
-## Kullanılanlar
+## Alt Yapı
 - PHP
 - SQLite
 - Bootstrap
